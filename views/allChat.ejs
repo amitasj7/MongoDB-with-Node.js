@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Chats</title>
+
+    <link rel="stylesheet" href="/chat.css" />
+  </head>
+  <body>
+    <div style="display: flex; flex-direction: row; gap: 10px">
+      <form method="GET" action="/chat/new">
+        <button>Add Chat</button>
+      </form>
+      <form method="GET" action="/chat/search">
+        <button>Search Chat</button>
+      </form>
+    </div>
+
+    <div class="card-container">
+      <% for(let chat1 of chats ){ %>
+      <div class="chat">
+        <h3>chat:</h3>
+        <p>Send by: <%=chat1.from%></p>
+
+        <p>message: <%=chat1.message%></p>
+
+        <p>Received by: <%=chat1.to%></p>
+        <br />
+        <p><%=chat1.created_at.toString().split(" ")[4]%></p>
+
+        <p><%= chat1.created_at.toString().split(" ").slice(0,4).join(" ")%></p>
+        <br />
+
+        <div style="display: flex; justify-content: space-between;">
+          <form method="POST" action="/chat/<%= chat1._id %>?_method=DELETE">
+            <button>Delete</button>
+          </form>
+          <form method="GET" action="/chat/<%= chat1._id%>">
+            <button>Edit</button>
+          </form>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </body>
+</html>

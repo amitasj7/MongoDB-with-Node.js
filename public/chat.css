@@ -1,0 +1,47 @@
+/* styles.css */
+
+/* Container for aligning cards */
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of cards if they overflow */
+    gap: 16px; /* Space between cards */
+    justify-content: center; /* Center cards horizontally */
+    padding: 16px; /* Space inside the container */
+    background-color: #e0f7fa; /* Light background color for the container */
+  }
+  
+  /* Styles for individual chat cards */
+  .chat {
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 16px; /* Space inside the card */
+    background-color: #ffffff; /* White background color for cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for card effect */
+    max-width: 300px; /* Set a max width for the cards */
+    flex: 1 1 auto; /* Allow cards to grow and shrink as needed */
+  }
+  
+  /* Heading styling */
+  .chat h3 {
+    margin-top: 0; /* Remove top margin for heading */
+    font-size: 1.2em; /* Slightly larger font size for heading */
+    color: #333; /* Dark text color */
+  }
+  
+  /* Paragraph styling */
+  .chat p {
+    margin: 8px 0; /* Space between paragraphs */
+    font-size: 1em; /* Standard font size */
+    color: #666; /* Gray text color */
+  }
+  
+  /* Italicize the message text */
+  .chat .message {
+    font-style: italic;
+  }
+  
+  /* Normal font weight for received message */
+  .chat .received {
+    font-weight: normal;
+  }
+  
